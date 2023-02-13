@@ -1,0 +1,12 @@
+main.c:278:6:HAL_SPI_TxCpltCallback	16	static
+main.c:287:6:HAL_UART_RxCpltCallback	24	static
+main.c:312:6:u8_update_output_buf	16	static
+main.c:354:6:u8_push_output_buf	24	static
+main.c:373:6:init_max7219	32	static
+main.c:433:5:main	16	static
+main.c:490:6:SystemClock_Config	88	static
+main.c:530:13:MX_SPI2_Init	8	static
+main.c:568:13:MX_USART2_UART_Init	8	static
+main.c:599:13:MX_DMA_Init	16	static
+main.c:620:13:MX_GPIO_Init	40	static
+main.c:649:6:Error_Handler	4	static,ignoring_inline_asm
