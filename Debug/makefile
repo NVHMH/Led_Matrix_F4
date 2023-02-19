@@ -8,6 +8,7 @@ RM := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
+-include Lib/Src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
@@ -28,34 +29,34 @@ endif
 
 -include ../makefile.defs
 
-BUILD_ARTIFACT_NAME := Led_Matrix_F4
+BUILD_ARTIFACT_NAME := Led_Matrix_F4_new
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX := 
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME).$(BUILD_ARTIFACT_EXTENSION)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Led_Matrix_F4.elf \
+Led_Matrix_F4_new.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Led_Matrix_F4.list \
+Led_Matrix_F4_new.list \
 
 OBJCOPY_BIN += \
-Led_Matrix_F4.bin \
+Led_Matrix_F4_new.bin \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Led_Matrix_F4.elf secondary-outputs
+main-build: Led_Matrix_F4_new.elf secondary-outputs
 
 # Tool invocations
-Led_Matrix_F4.elf: $(OBJS) $(USER_OBJS) C:\Users\84935\Documents\MyDocument\Projects\STM32F411CEU\led_matrix_f4\STM32F411CEUX_FLASH.ld
-	arm-none-eabi-gcc -o "Led_Matrix_F4.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\84935\Documents\MyDocument\Projects\STM32F411CEU\led_matrix_f4\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Led_Matrix_F4.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Led_Matrix_F4_new.elf: $(OBJS) $(USER_OBJS) C:\Users\84935\Documents\MyDocument\Projects\STM32F411CEU\led_matrix_f4\STM32F411CEUX_FLASH.ld
+	arm-none-eabi-gcc -o "Led_Matrix_F4_new.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\84935\Documents\MyDocument\Projects\STM32F411CEU\led_matrix_f4\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Led_Matrix_F4_new.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -64,13 +65,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Led_Matrix_F4.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Led_Matrix_F4.list"
+Led_Matrix_F4_new.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Led_Matrix_F4_new.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Led_Matrix_F4.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Led_Matrix_F4.bin"
+Led_Matrix_F4_new.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Led_Matrix_F4_new.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 

@@ -1,0 +1,4 @@
+led_matrix.c:63:6:PUSH_OUTPUT_Buf	40	dynamic
+led_matrix.c:79:6:UPDATE_OUTPUT_Buf	48	static
+led_matrix.c:129:6:LED_MATRIX_SPI_Handle	16	static
+led_matrix.c:148:6:LED_MATRIX_Init	72	dynamic
